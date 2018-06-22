@@ -31,7 +31,7 @@ export default class App extends Component<Props> {
             {instructions}
           </Text>
           <View bottom>
-            <Button label="Start" onPress=/>
+            <Button label="Start"/>
           </View>
         </View>
       </View>
