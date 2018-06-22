@@ -1,43 +1,39 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   Platform,
-  StyleSheet,
-  Text,
-  View,
-  Button
+  StyleSheet
 } from 'react-native';
+import {View, TextInput, Text, Button} from 'react-native-ui-lib';
+import {Header} from './src/components/Header';
+
 
 const instructions = Platform.select({
   ios: 'are you ready?,\n' +
     'Do not blink!',
   android: 'Challenge you friends, make them cry!\n' +
-    '\nDo you have what it takes?',
+    '\nDo you have what it takes?\n\n',
 });
 
 type Props = {};
 export default class App extends Component<Props> {
   render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to MitzMotz!
-        </Text>
-        <Text style={styles.instructions}>
-          The most awesome staring contest
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-        <Button
-          title="Start"
-          
-        />
+    return ( 
+      <View style={{ flex: 1 }}>
+      <Header headerText="FaceOff" />
+        <View style={styles.container}>
+          <Text style={styles.welcome}>
+            Welcome to FaceOff!
+          </Text>
+          <Text style={styles.instructions}>
+            The most awesome staring contest
+          </Text>
+          <Text style={styles.instructions}>
+            {instructions}
+          </Text>
+          <View bottom>
+            <Button label="Start" onPress=/>
+          </View>
+        </View>
       </View>
     );
   }
