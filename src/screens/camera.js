@@ -4,9 +4,10 @@ import {View, TextInput, Text, Button} from 'react-native-ui-lib';
 import { RNCamera } from 'react-native-camera';
 
 
-type Props = {};
-class Camera extends Component<Props> {
+class Camera extends Component {
+
   render() {
+    console.log("Yay! you made it to the camera section!");
     return (
       <View>
         <RNCamera

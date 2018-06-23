@@ -4,33 +4,9 @@ import { registerScreens } from './src/screens';
 
 registerScreens();
 
-Navigation.events().registerAppLaunchedListener(() => {
-  Navigation.setRoot({
-      root: {
-          children: [
-            {
-              stack: {
-                id: 'HOME_SCREEN',
-                children: [
-                  {
-                    component: {
-                      name: 'HomeScreen',
-                      option: {
-                        topBar: {
-                          visible: true,
-                          title: {text: 'FaceOff'}
-                        }
-                      } 
-                    },
-                    component: {
-                      name: 'Camera',
-                      option: {topBar: {visible: false}}
-                    } 
-                  }
-                ]
-              }
-            }
-          ]
-      }
-    });
+Navigation.startSingleScreenApp({
+  screen: {
+    screen: 'HomeScreen',
+    title: 'FaceOff',
+  }
 });

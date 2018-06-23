@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Platform, StyleSheet } from 'react-native';
 import {View, TextInput, Text, Button} from 'react-native-ui-lib';
-import { Header } from '../components/Header';
 import { Navigation } from 'react-native-navigation';
 import { ConnectionStatusBar } from 'react-native-ui-lib/src';
 
@@ -10,7 +9,7 @@ const instructions = Platform.select({
   ios: 'are you ready?,\n' +
     'Do not blink!',
   android: 'Challenge you friends, make them cry!\n' +
-    '\nDo you have what it takes?\n\n',
+    '\nDo you have what it takes?\n',
 });
 
 export default class HomeScreen extends PureComponent {
@@ -24,7 +23,6 @@ export default class HomeScreen extends PureComponent {
   render() {
     return ( 
       <View style={{ flex: 1 }}>
-      <Header headerText="FaceOff" />
         <View style={styles.container}>
           <Text style={styles.welcome}>
             Welcome to FaceOff!
@@ -35,7 +33,7 @@ export default class HomeScreen extends PureComponent {
           <Text style={styles.instructions}>
             {instructions}
           </Text>
-          <View bottom>
+          <View style={styles.button} >
             <Button 
               label="Start"
               onPress={() => this.showCameraScreen('Camera')}
@@ -51,18 +49,23 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
   welcome: {
-    fontSize: 20,
+    fontSize: 30,
     textAlign: 'center',
-    margin: 10,
+    margin: 20,
   },
   instructions: {
     textAlign: 'center',
+    fontSize: 15,
     color: '#333333',
     marginBottom: 5,
   },
+  button: {
+      marginTop: 50,
+      justifyContent: 'center',
+      alignItems: 'center'     
+  }
 });
 
