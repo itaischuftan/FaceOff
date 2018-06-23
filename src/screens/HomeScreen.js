@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Platform, StyleSheet } from 'react-native';
 import {View, TextInput, Text, Button} from 'react-native-ui-lib';
 import { Header } from '../components/Header';
@@ -13,12 +13,12 @@ const instructions = Platform.select({
     '\nDo you have what it takes?\n\n',
 });
 
-class HomeScreen extends Component {
+export default class HomeScreen extends PureComponent {
 
-    showCameraScreen = () => {
-        Navigation.push(this.props.componentId, {
-            component: {name: 'Camera'}
-          });
+    showCameraScreen = (string) => {
+        this.props.navigator.push({
+            screen: string
+        });
     };
 
   render() {
@@ -38,7 +38,7 @@ class HomeScreen extends Component {
           <View bottom>
             <Button 
               label="Start"
-              onPress={() => this.showCameraScreen()}
+              onPress={() => this.showCameraScreen('Camera')}
             />
           </View>
         </View>
@@ -66,4 +66,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomeScreen;

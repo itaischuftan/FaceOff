@@ -1,25 +1,14 @@
 import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  TouchableOpacity
-} from 'react-native';
+import { Platform, StyleSheet, TouchableOpacity} from 'react-native';
 import {View, TextInput, Text, Button} from 'react-native-ui-lib';
 import { RNCamera } from 'react-native-camera';
 
-
-const instructions = Platform.select({
-  ios: 'are you ready?,\n' +
-    'Do not blink!',
-  android: 'Challenge you friends, make them cry!\n' +
-    '\nDo you have what it takes?\n\n',
-});
 
 type Props = {};
 class Camera extends Component<Props> {
   render() {
     return (
-      <View style={styles.container}>
+      <View>
         <RNCamera
             ref={ref => {
               this.camera = ref;

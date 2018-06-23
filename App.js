@@ -34,15 +34,3 @@ Navigation.events().registerAppLaunchedListener(() => {
       }
     });
 });
-
-
-type Props = {};
-export default class App extends Component<Props> {
-  render() {
-    return ( 
-      <View style={{ flex: 1 }}>
-
-      </View>
-    );
-  }
-}
