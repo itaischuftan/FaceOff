@@ -16,7 +16,7 @@ const instructions = Platform.select({
 });
 
 type Props = {};
-export default class App extends Component<Props> {
+class Camera extends Component<Props> {
   render() {
     return (
       <View style={styles.container}>
@@ -73,5 +73,5 @@ const styles = StyleSheet.create({
   }
 });
 
-//AppRegistry.registerComponent('BadInstagramCloneApp', () => BadInstagramCloneApp);
+export default Camera;
 
